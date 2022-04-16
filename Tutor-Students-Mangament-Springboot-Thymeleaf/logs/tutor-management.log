@@ -1,0 +1,31 @@
+2022-04-15 13:26:46.443 [main] INFO  c.app.ELearning.ELearningApplication - Starting ELearningApplication using Java 1.8.0_322 on KamranAbbasi with PID 9848 (D:\Personal Development\TutorManagementSystem\Tutor-Students-Mangament-Springboot-Thymeleaf\target\classes started by Kamran Abbasi in D:\Personal Development\TutorManagementSystem\Tutor-Students-Mangament-Springboot-Thymeleaf)
+2022-04-15 13:26:46.443 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2022-04-15 13:26:46.444 [main] INFO  c.app.ELearning.ELearningApplication - No active profile set, falling back to default profiles: default
+2022-04-15 13:26:47.198 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-15 13:26:47.246 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 4 JPA repository interfaces.
+2022-04-15 13:26:47.650 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-15 13:26:47.656 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-15 13:26:47.657 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-15 13:26:47.657 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022-04-15 13:26:48.175 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-15 13:26:48.176 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1699 ms
+2022-04-15 13:26:48.313 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-15 13:26:48.348 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-04-15 13:26:48.434 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-15 13:26:48.505 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-15 13:26:48.614 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-15 13:26:48.628 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-04-15 13:26:49.268 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-15 13:26:49.276 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-15 13:26:49.760 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-15 13:26:50.094 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-15 13:26:50.108 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-15 13:26:50.109 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-04-15 13:26:50.120 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-04-15 13:26:50.130 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-04-15 13:26:50.424 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: classObjectListUsingGET_1
+2022-04-15 13:26:50.445 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: viewCourseLessonsUsingGET_1
+2022-04-15 13:26:50.461 [main] INFO  c.app.ELearning.ELearningApplication - Started ELearningApplication in 4.404 seconds (JVM running for 7.708)
+2022-04-15 13:27:42.303 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-15 13:27:42.305 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-04-15 13:27:42.311 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

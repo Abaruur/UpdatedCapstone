@@ -1,0 +1,45 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <script type="text/javascript" th:src="@{/js/action.js}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="topnav">
+    <a class="active" th:href="@{/}">Home</a>
+    <a style="float: right" th:href="@{/register/student/form}">Student SignUp</a>
+    <a style="float: right" th:href="@{/register/tutor/form}">Tutor SignUp</a>
+
+<!--    <a th:href="@{/register/student/form}" class="btn btn-primary col-2">Student SignUp</a>-->
+<!--    <a th:href="@{/register/tutor/form}" class="btn btn-primary col-2">Tutor SignUp</a>-->
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <h1 style="text-align: center; font-family: fantasy;" class="login">Welcome to the Login page</h1>
+        <div class="container">
+            <br>
+            <p th:if="${loginError}" class="error">Wrong username or password</p>
+            <form th:action="@{/login}" method="POST" th:object="${loginDTO}">
+                <label>Username:</label>
+                <input type="text" placeholder="Enter Username" th:field="*{username}"
+                       class="form-control" id="username">
+                <br>
+                <label>Password:</label>
+                <input type="password" placeholder="Enter Password" th:field="*{password}"
+                       class="form-control" id="password">
+                <br>
+                <button type="submit" class="btn btn-info col-2"> Log In</button>
+            </form>
+            <hr style="margin-top: 5px">
+            <button class="btn btn-success col-2" th:onclick="showHelp()">Need Help?</button>
+        </div>
+    </div>
+    </body>
+    </html>

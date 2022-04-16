@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutor Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+<body>
+<div class="topnav">
+    <a th:href="@{/student/{studentId}(studentId=${studentId})}">Home</a>
+    <a th:href="@{/student/{studentId}(studentId=${studentId})}">Booked Classes</a>
+    <a class="active" th:href="@{/student/view-all-classes/{studentId}(studentId=${studentId})}">All Classes</a>
+    <a th:href="@{/logout}" style="float: right">Logout</a>
+</div>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 style="text-align: center; font-family: fantasy;" class="login">All Available Classes</h1>
+        <hr>
+        <!--<a th:href="@{/tutor/class/create/{tutorId}(tutorId=${tutorId})}"
+           target="_blank"
+           class="btn btn-primary">Create Class
+        </a>-->
+        <hr>
+        <!--<h1 th:if="${booked.}"> The class been booked successfully !! </h1>
+        <h1 th:if="${!booked}"> You are already a student of this class !! </h1>-->
+        <table border="2" class="table table-bordered table-responsive-md">
+            <thead>
+            <tr>
+                <th>Class Id</th>
+                <th>Class Name</th>
+                <th>Class Time</th>
+                <th>Week Per Days</th>
+                <th>Tutor Name</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="class : ${classesList}">
+                <td th:text="${class.classId}"></td>
+                <td th:text="${class.className}"></td>
+                <td th:text="${class.classTime}"></td>
+                <td th:text="${class.daysPerWeek}"></td>
+                <td th:text="${class.tutorName}"></td>
+                <td>
+                    <a th:href="@{/student/book/class/{studentId}/{classId}(studentId=${studentId},classId=${class.classId})}"
+                       class="btn btn-info">Book Class</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

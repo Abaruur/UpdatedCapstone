@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Class</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+<body>
+<div class="topnav">
+    <a th:href="@{/tutor/{tutorId}(tutorId=${tutorId})}">Home</a>
+    <a class="active" th:href="@{/tutor/{tutorId}(tutorId=${tutorId})}">Classes</a>
+    <a th:href="@{/lessons/list/{tutorId}(tutorId=${tutorId})}">All Lessons</a>
+    <a th:href="@{/logout}" style="float: right">Logout</a>
+</div>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 style="text-align: center; font-family: fantasy;" class="login">Welcome to Create Class form</h1>
+        <hr>
+        <form th:action="@{/tutor/class/add/{tutorId}(tutorId=${tutorId})}" th:object="${classObject}" method="post"
+              class="form">
+            <div class="form-group">
+                <label for="className">Name</label>
+                <input class="form-control" type="text" th:field="*{className}" id="className" placeholder="Class Name"
+                       required>
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('className')}"
+                     th:errors="*{className}"></div>
+            </div>
+            <div class="form-group">
+                <label for="daysPerWeek">Days Per Week</label>
+                <input class="form-control" type="text" th:field="*{daysPerWeek}" id="daysPerWeek"
+                       placeholder="Days per Week" required>
+                <div class="alert alert-warning" th:if="${#fields.hasErrors('daysPerWeek')}"
+                     th:errors="*{daysPerWeek}"></div>
+            </div>
+            <div class="form-group">
+                <label for="classTime">Class Time</label>
+                <input type="time" th:field="*{classTime}" id="classTime" placeholder="hrs:mins" class="form-control"
+                       required>
+            </div>
+            <input type="submit" class="btn btn-success">
+        </form>
+
+    </div>
+</div>
+
+
+</body>
+</html>
